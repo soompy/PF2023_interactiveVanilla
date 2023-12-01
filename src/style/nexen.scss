@@ -18,57 +18,6 @@
         }
     }
 
-    .bg-container {
-        overflow: hidden;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-
-        span {
-            display: block;
-            position: absolute;
-            width: 180px;
-            transform-origin: center;
-            transition: all 0.7s ease-in-out;
-
-            img {
-                display: block;
-                width: 100%;
-            }
-
-            &:nth-child(odd) {
-                transform: translate(-90px, 0);
-            }
-
-            &:nth-child(even) {
-                transform: translate(90px, 0);
-            }
-
-            &:nth-child(1) {
-                left: -90px;
-                top: 30%;
-            }
-
-            &:nth-child(2) {
-                right: -90px;
-                top: 50%;
-            }
-
-            &:nth-child(3) {
-                left: -90px;
-                top: 70%;
-            }
-
-            &:nth-child(4) {
-                right: -90px;
-                top: 90%;
-            }
-        }
-    }
-
     .area-01 {
         position: relative;
         margin: auto;
@@ -184,5 +133,55 @@
     .area-04 {
         height: 100vh;
         background: #ffffff;
+    }
+
+    .bg-container {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        span {
+            display: block;
+            position: absolute;
+            width: 180px;
+            transform-origin: center;
+            transition: all 0.7s ease-in-out;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+
+            &:nth-child(odd) {
+                transform: translate(-90px, 0);
+            }
+
+            &:nth-child(even) {
+                transform: translate(90px, 0);
+            }
+
+            &:nth-child(1) {
+                left: -90px;
+                top: 10%;
+            }
+
+            &:nth-child(2) {
+                right: -90px;
+                top: 30%;
+            }
+
+            &:nth-child(3) {
+                left: -90px;
+                top: 50%;
+            }
+
+            &:nth-child(4) {
+                right: -90px;
+                top: 70%;
+            }
+        }
     }
 }
