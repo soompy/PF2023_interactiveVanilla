@@ -9,6 +9,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^5.0.0"
+    "consola": "^3.2.3",
+    "sass": "^1.69.5",
+    "vite": "^5.0.0",
+    "vite-plugin-style-import": "^2.0.0",
+    "vite-plugin-vue": "^0.0.1"
   }
 }

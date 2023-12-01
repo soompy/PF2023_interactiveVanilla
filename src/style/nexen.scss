@@ -1,0 +1,188 @@
+.wrapper.nexen {
+    position: relative;
+    width: 100%;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', Sans-serif;
+    background: #ffffff;
+
+    @keyframes floating {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(20px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .bg-container {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+
+        span {
+            display: block;
+            position: absolute;
+            width: 180px;
+            transform-origin: center;
+            transition: all 0.7s ease-in-out;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+
+            &:nth-child(odd) {
+                transform: translate(-90px, 0);
+            }
+
+            &:nth-child(even) {
+                transform: translate(90px, 0);
+            }
+
+            &:nth-child(1) {
+                left: -90px;
+                top: 30%;
+            }
+
+            &:nth-child(2) {
+                right: -90px;
+                top: 50%;
+            }
+
+            &:nth-child(3) {
+                left: -90px;
+                top: 70%;
+            }
+
+            &:nth-child(4) {
+                right: -90px;
+                top: 90%;
+            }
+        }
+    }
+
+    .area-01 {
+        position: relative;
+        margin: auto;
+        padding-bottom: 300px;
+
+        .visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 80px 0;
+
+            h2 {
+                font-size: 40px;
+                line-height: 52px;
+                text-align: center;
+            }
+
+            img {
+                width: 500px;
+                margin: 80px auto;
+
+                &.logo {
+                    width: 120px;
+                    margin: 0 auto 20px;
+                }
+            }
+
+            span {
+                font-size: 16px;
+                line-height: 28px;
+                font-weight: 500;
+                text-align: center;
+                animation: floating 1.2s linear infinite;
+                margin-top: auto;
+            }
+        }
+
+        .list-container {
+            width: 500px;
+            margin: auto;
+
+            .list-item {
+                display: inline;
+                opacity: 0.2;
+                font-size: 30px;
+                line-height: 46px;
+                font-weight: 500;
+
+                &.on {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .area-02 {
+        .video-wrap {
+            width: 500px;
+            margin: auto;
+
+            .fixed-box {
+                width: 500px;
+
+                video {
+                    width: 500px;
+                }
+
+                .fixed-description {
+                    opacity: 0;
+                    font-size: 30px;
+                    font-weight: bold;
+                    text-align: right;
+                    margin: 30px auto 0;
+                    transform: translateY(100px);
+
+                    img {
+                        width: 200px;
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .area-03 {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+
+        .slogan-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            width: 500px;
+            height: 100%;
+
+            h2 {
+                font-size: 30px;
+                line-height: 42px;
+                margin-bottom: 40px;
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 40px;
+            }
+        }
+    }
+
+    .area-04 {
+        height: 100vh;
+        background: #ffffff;
+    }
+}
