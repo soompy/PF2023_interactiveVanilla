@@ -9,14 +9,21 @@
   <meta property="og:title" content="프론트엔드 이수민">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://soominpf23.vercel.app/images/sec01/profile.png">
-  <meta property="og:description" content="다양한 프로젝트 경험과 기술 역량을 갖고 있는 UI개발자">
+  <meta property="og:description" content="넥센타이어 홍보페이지 포트폴리오">
   <title>프론트엔드 이수민 포트폴리오</title>
 </head>
 
 <body>
   <div id="app">
     <div class="wrapper nexen">
-      <section class="area-01">        
+      <div class="bg-container">
+        <span><img src="assets/images/car_1.jpg" alt="차이미지"></span>
+        <span><img src="assets/images/car_2.jpg" alt="차이미지"></span>
+        <span><img src="assets/images/car_3.jpg" alt="차이미지"></span>
+        <span><img src="assets/images/car_4.png" alt="차이미지"></span>
+      </div>
+
+      <section class="area-01">
         <div class="visual">
           <img class="logo" src="https://www.gripnews.it/wp-content/uploads/2018/05/Nexen-logo-1920x1080.png"
             alt="넥센타이어">
@@ -43,7 +50,7 @@
         <div class="video-wrap">
           <div id="fixedBox" class="fixed-box">
             <video id="video" class="video" muted loop>
-              <source src="https://nexen-front.s3.ap-northeast-2.amazonaws.com/kr/kr_03.mp4" type="">
+              <source src="https://nexen-front.s3.ap-northeast-2.amazonaws.com/kr/kr_03.mp4" type="video/mp4">
             </video>
             <div class="fixed-description">
               <div>
@@ -67,19 +74,22 @@
         </div>
       </section>
 
-      <section class="area-04">
-        ㅁ
+      <section class="area-04 poster hidden-area">
+        <div class="poster__parallax">
+          <div id="poster-image_wrapper_1" class="poster-image_wrapper">
+            <img id="poster-image_1" src="https://www.nexentire.com/webzine/201704/kr/assets/images/contents/003_01.jpg"
+              alt="" class="poster-image">
+          </div>
+          <div id="poster-image_wrapper_2" class="poster-image_wrapper">
+            <img id="poster-image_2" src="https://www.nexentire.com/webzine/201706/kr/assets/images/contents/003_01.jpg"
+              alt="" class="poster-image">
+          </div>
+          <div id="poster-image_wrapper_3" class="poster-image_wrapper">
+            <img id="poster-image_3" src="https://www.nexentire.com/webzine/201706/kr/assets/images/contents/002_01.jpg"
+              alt="" class="poster-image">
+          </div>
+        </div>
       </section>
-      <section class="area-04">
-        ㅁ
-      </section>
-      
-      <div class="bg-container">
-        <span><img src="assets/images/car_1.jpg" alt="차이미지"></span>
-        <span><img src="assets/images/car_2.jpg" alt="차이미지"></span>
-        <span><img src="assets/images/car_3.jpg" alt="차이미지"></span>
-        <span><img src="assets/images/car_4.png" alt="차이미지"></span>
-      </div>
     </div>
   </div>
   <script type="module" src="main.js"></script>

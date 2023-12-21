@@ -38,6 +38,12 @@ const nexen = () => {
     }
   }
 
+  let intervalId = null;
+  const preloaderHideThreshold = 18;
+
+  const area04 = document.querySelector(".area-04");
+  const area04OffsetTop = area04 ? area04.offsetTop : 0;
+
   window.addEventListener("scroll", () => {
     const middleOfScreen = window.innerHeight / 2 + window.scrollY;
 
@@ -84,12 +90,6 @@ const nexen = () => {
     const area01H = document.querySelector(".area-01").clientHeight;
     const area02H = document.querySelector(".area-02").clientHeight;
 
-    console.log(fixedDescription);
-    console.log(area01H);
-    console.log(area02H);
-    console.log(fixedDescriptionH);
-    console.log(window.scrollY);
-
     if (window.scrollY > area01H && window.scrollY < area02H) {
       fixedDescription.style.transform = `translateY(${
         window.scrollY - area01H
@@ -104,6 +104,54 @@ const nexen = () => {
     }
 
     centerElement("slogan");
+
+    const poster = document.querySelector(".poster");
+
+    if (poster) {
+      if (window.scrollY > area04OffsetTop) {
+        poster.classList.remove("hidden-area");
+        poster.classList.add("shown-area");
+      } else {
+        poster.classList.add("hidden-area");
+        poster.classList.remove("shown-area");
+      }
+    } else {
+      console.error("Element with class 'poster' not found.");
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("poster-image_state_visible");
+        }
+      });
+    });
+
+    document.querySelectorAll(".poster-image_wrapper").forEach((poster) => {
+      observer.observe(poster);
+    });
+
+    const posterParallax = document.querySelector(".poster__parallax");
+    posterParallax.addEventListener("mousemove", (e) => {
+      const xRelativeToPosterParallax = e.clientX / posterParallax.clientWidth;
+      const yRelativeToPosterParallax = e.clientY / posterParallax.clientHeight;
+
+      document.querySelector(
+        "#poster-image_wrapper_1"
+      ).style.transform = `translate(${xRelativeToPosterParallax * 60}px, ${
+        yRelativeToPosterParallax * 60
+      }px)`;
+      document.querySelector(
+        "#poster-image_wrapper_2"
+      ).style.transform = `translate(${xRelativeToPosterParallax * -40}px, ${
+        yRelativeToPosterParallax * -40
+      }px)`;
+      document.querySelector(
+        "#poster-image_wrapper_3"
+      ).style.transform = `translate(${xRelativeToPosterParallax * 40}px, ${
+        yRelativeToPosterParallax * 40
+      }px)`;
+    });
   });
 
   videoElement.addEventListener("loadedmetadata", () => {
