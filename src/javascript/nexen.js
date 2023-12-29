@@ -12,7 +12,7 @@ const nexen = () => {
   const videoWrap = document.querySelector(".video-wrap");
   const fixedVideoBox = document.querySelector(".fixed-box");
   const videoElement = document.querySelector(".video");
-  const fixedVideoText = document.querySelector(".fixed-description");
+  const  = document.querySelector(".fixed-description");
 
   function centerElement(elementId, video) {
     const element = document.getElementById(elementId);
@@ -84,22 +84,21 @@ const nexen = () => {
       }px)`;
     }
 
-    const fixedDescription = document.querySelector(".fixed-description");
-    const fixedDescriptionH =
-      document.querySelector(".fixed-description").offsetHeight;
+    const fixedDescription = document.querySelector(".fixed-description");    
     const area01H = document.querySelector(".area-01").clientHeight;
     const area02H = document.querySelector(".area-02").clientHeight;
 
     if (window.scrollY > area01H && window.scrollY < area02H) {
-      fixedDescription.style.transform = `translateY(${
-        window.scrollY - area01H
-      }px)`;
-      fixedDescription.style.opacity = (area02H - window.scrollY) / 3000;
+      const translateY = window.scrollY - area01H;
+      const opacity = 1 - translateY / (area02H - area01H);
+  
+      fixedDescription.style.transform = `translateY(${translateY}px)`;
+      fixedDescription.style.opacity = opacity;
     } else if (window.scrollY >= area02H) {
-      fixedDescription.style.transform = `translateY(0px)`;
+      fixedDescription.style.transform = "translateY(0px)";
       fixedDescription.style.opacity = 1;
     } else {
-      fixedDescription.style.transform = `translateY(100px)`;
+      fixedDescription.style.transform = "translateY(100px)";
       fixedDescription.style.opacity = 0;
     }
 
