@@ -12,7 +12,7 @@ const nexen = () => {
   const videoWrap = document.querySelector(".video-wrap");
   const fixedVideoBox = document.querySelector(".fixed-box");
   const videoElement = document.querySelector(".video");
-  const  = document.querySelector(".fixed-description");
+  const fixedDescription = document.querySelector(".fixed-description");
 
   function centerElement(elementId, video) {
     const element = document.getElementById(elementId);
@@ -43,6 +43,9 @@ const nexen = () => {
 
   const area04 = document.querySelector(".area-04");
   const area04OffsetTop = area04 ? area04.offsetTop : 0;
+
+  const fixedDescriptionAppearTiming = document.querySelector(".area-02").offsetTop;
+  const fixedDescriptionAppearEnds = document.querySelector(".area-03").offsetTop;
 
   window.addEventListener("scroll", () => {
     const middleOfScreen = window.innerHeight / 2 + window.scrollY;
@@ -83,23 +86,17 @@ const nexen = () => {
         videoWrap.offsetHeight - fixedVideoBox.offsetHeight
       }px)`;
     }
+    
+    if (window.scrollY > fixedDescriptionAppearTiming && window.scrollY < fixedDescriptionAppearEnds) {
+      fixedDescription.style.transform = `translateY(${fixedDescriptionAppearEnds - window.scrollY}px)`
 
-    const fixedDescription = document.querySelector(".fixed-description");    
-    const area01H = document.querySelector(".area-01").clientHeight;
-    const area02H = document.querySelector(".area-02").clientHeight;
-
-    if (window.scrollY > area01H && window.scrollY < area02H) {
-      const translateY = window.scrollY - area01H;
-      const opacity = 1 - translateY / (area02H - area01H);
-  
-      fixedDescription.style.transform = `translateY(${translateY}px)`;
-      fixedDescription.style.opacity = opacity;
-    } else if (window.scrollY >= area02H) {
-      fixedDescription.style.transform = "translateY(0px)";
-      fixedDescription.style.opacity = 1;
+      fixedDescription.style.opacity = (window.scrollY - fixedDescriptionAppearTiming) / 300
+    } else if (window.scrollY > fixedDescriptionAppearEnds) {
+      fixedDescription.style.transform = `translateY(0px)`
+      fixedDescription.style.opacity = 1
     } else {
-      fixedDescription.style.transform = "translateY(100px)";
-      fixedDescription.style.opacity = 0;
+      fixedDescription.style.transform = `translateY(100px)`
+      fixedDescription.style.opacity = 0
     }
 
     centerElement("slogan");
