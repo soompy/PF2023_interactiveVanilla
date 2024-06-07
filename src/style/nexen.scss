@@ -239,7 +239,8 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;    
+    width: 100%;
+    height: -webkit-fill-available;    
     height: 100%;
 
     span {
